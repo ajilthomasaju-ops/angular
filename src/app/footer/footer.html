@@ -1,0 +1,9 @@
+<div class="container">
+    <h1 [ngClass]="isActive ? 'text-primary' : 'text-danger' ">Technologies</h1>
+    <button (click)="toggleActive()" class="btn btn-primary">Toggle</button>
+        <ol>
+        @for (item of technologies; track $index) {
+            <li>{{item}}</li>
+    }
+    </ol>
+</div>

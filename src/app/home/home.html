@@ -1,0 +1,14 @@
+<div class="container text-center font-medium text-primary ">
+    <p>{{title}}</p>
+    <div class="d-flex flex-column justify-center ">
+        <img width="300px" [src]="imageURL" alt="">
+        <button (click)="showAlert()" class="btn btn-primary">Click Here</button>
+        <div class="d-flex mt-5 flex-column align-items-center justify-content-center">
+            <input (change)="getName($event)" type="text" class="form-control w-50 my-2" placeholder="Username">
+            <input #ageInput type="text" class="form-control w-50 my-2" placeholder="Age">
+            @if (username) {
+                <button (click)="showName(ageInput)" class="btn btn-primary my-5">Show name</button>
+            }
+        </div>
+    </div>
+</div>
