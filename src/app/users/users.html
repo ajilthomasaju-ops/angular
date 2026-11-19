@@ -6,20 +6,20 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Sl.no</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Address</th>
+                <th>UserId</th>
+                <th>Id</th>
+                <th>title</th>
+                <th>status</th>
             </tr>
         </thead>
         <tbody>
             <!-- Duplication -->
-             @for (user of allUser | async; track $index ;let i=$index) {
+             @for (todo of allTodos(); track $index) {
                 <tr>
-                <td>{{i+1}}</td>
-                <td>{{user.name}}</td>
-                <td>{{user.email}}</td>
-                <td>{{user.address.street}}</td>
+                <td>{{todo.userId}}</td>
+                <td>{{todo.id}}</td>
+                <td>{{todo.title}}</td>
+                <td>{{todo.completed? 'completed' : 'Incomplete'}}</td>
             </tr>
              }
         </tbody>
